@@ -1,0 +1,81 @@
+module Worksheet1 where
+
+-- 2.4
+
+-- bracket not closed
+-- multiplication is "*" not "x"
+-- It should be written as 3 + (-3)
+
+
+-- 3.1 Define a function myNot that negates a Boolean using pattern matching.
+myNot x = case x of
+        True -> False
+        False -> True
+-- >>> myNot True
+-- False
+
+
+
+-- 3.2 Using only pattern matching, define a function myAnd that takes 2 Booleans and only returns True if both
+--inputs are True.
+myAnd   (y,z) = case (y,z) of 
+         (True, False) -> False
+         (False,True) -> False
+         (True, True)-> True
+         (False, False) -> False
+-- >>> myand (True, True)
+-- True
+
+myAndd True False = False
+myAndd False False = False
+myAndd True True = True
+myAndd False True = False
+-- >>> myAndd True False
+-- False
+
+-- 3.3 Define a function that calculates a tip, e.g. ‘calcTip c = ’ , replacing ‘ ’ with an expression that determines
+--the tip from the cost c. The tip rate should be 10% for a cost of less than or equal to 10, and 15% for a cost
+--over 10.
+
+calcTip c = if c<=10
+            then (10/100)*c
+            else (15/100)*c
+
+
+-- 3.4. Define a function mysterious that halves the input number if it’s even and otherwise computes 3n + 1 where
+--n is the input. You should use the function div to perform integer division in your definition (e.g. div 2 or
+--using an infix style ‘div‘ 2).
+-----------------------------------------------------
+
+
+
+-- *⋆ Write a function definition that takes a percentage as its input and returns a string of the correct university
+--grade, e.g. grade 70 = "First class"
+gradeCalc g
+    |g>= 70 = "First Class"
+    |g>=50 = "Second class"
+    |g>=30 = "Third class"
+    |g>=0 = "fail"
+-- >>> gradeCalc 50
+-- "Second class"
+            
+-- ⋆ The following definition has two syntax errors in it. Copy it into your file (the indentation may not be
+--preserved when copy-pasting, make sure to add the missing spaces back) and correct the errors with the
+--help of GHCi and/or HLS.
+
+foo happiness
+    |happiness>10 = "Hello!"
+    |happiness<10 = "Goodbye"
+    |otherwise = "Goodbye!"
+
+-- >>> foo 10
+-- "Goodbye!"
+
+
+
+            
+
+
+
+
+
